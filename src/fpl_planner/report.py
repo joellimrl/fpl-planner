@@ -101,7 +101,9 @@ def run_review(root,client,state=None,key=None,force=False,entry_id=None):
     personal_status='not_configured';private_cipher=None
     if state is not None and key:
         try:validated=validate_state(state,players,events[0])
-        except ValueError:personal_status='state_refresh_required'
+        except ValueError:
+            if entry_id is not None:raise
+            personal_status='state_refresh_required'
         else:
             plans=compare(players,validated,events,config)
             report=dict(collected_at=snap['collected_at'],model=__version__,events=events,
@@ -112,6 +114,17 @@ def run_review(root,client,state=None,key=None,force=False,entry_id=None):
                         limitations=LIMITATIONS)
             private_cipher=seal(report,key);personal_status='encrypted'
     elif state is not None:personal_status='encryption_key_required'
+    if entry_id is not None:
+        # Collection/optimisation can cross a deadline. Publish only against the
+        # same locked round; otherwise the next run starts from the new squad.
+        fresh=client.get('bootstrap-static/')
+        fresh_next=next(iter(future_events({'events':fresh['events'],
+                         'completed':completed_events(fresh)},1)),None)
+        fresh_current=max((e['id'] for e in fresh['events']
+                           if e.get('is_current') or e.get('is_previous')),default=0)
+        if (fresh_next != next_event or fresh_current != state['baseline']['published_gameweek']
+                or client.get(f'entry/{entry_id}/')['current_event'] != fresh_current):
+            raise ValueError('Published FPL deadline changed during review; retry with the new baseline')
     label=f'{season}-gw{max(complete):02d}'
     files={f'data/snapshots/{label}.json.gz':gzip.compress(canonical(snap),mtime=0),
            f'data/forecasts/{label}.json.gz':gzip.compress(canonical(players),mtime=0),

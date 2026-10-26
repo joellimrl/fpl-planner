@@ -91,7 +91,8 @@ def load_public_state(client, bootstrap, entry_id, next_gw):
                 del purchases[out]
                 purchases[incoming] = cost
                 bank += sale - cost
-                _money(bank)
+            # API pairs in one confirmed transfer batch have no funding order.
+            _money(bank)
             _require(bank == row['bank'])
         if chip not in {'wildcard', 'freehit'}:
             allowance = min(5, max(0, allowance-count) + 1)

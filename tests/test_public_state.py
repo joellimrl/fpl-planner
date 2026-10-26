@@ -69,6 +69,19 @@ class PublicStateTests(unittest.TestCase):
         boot, _, client = public_fixture(8)
         self.assertEqual(self.load(boot, client)['free_transfers'], 5)
 
+    def test_simultaneous_moves_use_total_bank_not_arbitrary_row_order(self):
+        boot, data, client = public_fixture(2)
+        # A batch may fund its expensive incoming player with another outgoing sale.
+        data['entry/42/transfers/'] = [transfer(2, 4, 9, 301, 50),
+                                     transfer(2, 5, 10, 49, 50)]
+        row=data['entry/42/history/']['current'][1]
+        row.update(bank=0, event_transfers=2, event_transfers_cost=4)
+        target=data['entry/42/event/2/picks/']
+        target['entry_history'].update(row)
+        target['picks']=[dict(element={4:9,5:10}.get(p['element'],p['element']))
+                         for p in target['picks']]
+        self.assertEqual(self.load(boot,client)['bank'],0)
+
     def test_hits_are_reconciled_with_available_transfers(self):
         boot, data, client = public_fixture(2)
         data['entry/42/transfers/'] = [transfer(2), transfer(2, 5, 10)]

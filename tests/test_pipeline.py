@@ -56,6 +56,27 @@ class PipelineTests(unittest.TestCase):
                 self.assertEqual((root/'data/manifest.json').read_bytes(),old)
                 self.assertEqual((root/'reports/private/latest.enc').read_bytes(),cipher)
 
+                # A deadline can pass during the expensive player/solver work.
+                data['entry/42/history/']['current'][-1]['bank']=250
+                invalid_s=json.loads(json.dumps(s))
+                for p in invalid_s['players']:p['team']=1
+                with patch('fpl_planner.report.collect',return_value=invalid_s):
+                    with self.assertRaises(ValueError):run_review(root,client,key=key,entry_id=42,force=True)
+                self.assertEqual((root/'data/manifest.json').read_bytes(),old)
+                self.assertEqual((root/'reports/private/latest.enc').read_bytes(),cipher)
+                rolled=json.loads(json.dumps(boot))
+                rolled['events'][-2]['is_current']=False
+                rolled['events'][-1].update(is_next=False,is_current=True)
+                rolled['events'].append(dict(id=10,is_next=True,finished=False))
+                def roll_during_collect(*args):
+                    data['bootstrap-static/']=rolled
+                    data['entry/42/']['current_event']=9
+                    return s
+                with patch('fpl_planner.report.collect',side_effect=roll_during_collect):
+                    with self.assertRaises(ValueError):run_review(root,client,key=key,entry_id=42,force=True)
+                self.assertEqual((root/'data/manifest.json').read_bytes(),old)
+                self.assertEqual((root/'reports/private/latest.enc').read_bytes(),cipher)
+
     def test_cli_uses_public_config_without_parsing_legacy_secret(self):
         from fpl_planner.cli import main
         key=base64.urlsafe_b64encode(bytes(range(32))).decode()
