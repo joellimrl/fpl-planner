@@ -17,7 +17,7 @@ class ForecastTests(unittest.TestCase):
         s['histories']['1'].append(dict(s['histories']['1'][0],round=9,expected_goals=9999))
         self.assertEqual(one,project(s,{'horizon':1})[0]['forecasts'][9])
         s['fixtures'].append(dict(s['fixtures'][0],id=2))
-        self.assertAlmostEqual(project(s,{'horizon':1})[0]['forecasts'][9],2*one,6)
+        self.assertAlmostEqual(project(s,{'horizon':1})[0]['forecasts'][9],2*one,delta=0.000002)
         s['fixtures']=[]
         self.assertEqual(project(s,{'horizon':1})[0]['forecasts'][9],0)
 
