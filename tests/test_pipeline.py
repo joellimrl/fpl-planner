@@ -19,6 +19,56 @@ class Client:
 
 
 class PipelineTests(unittest.TestCase):
+    def test_public_baseline_precedes_private_state_and_encrypts_provenance(self):
+        from fpl_planner.report import run_review, personal_markdown
+        from fpl_planner.privacy import unseal
+        from tests.test_public_state import public_fixture
+        from tests.helpers import league
+        boot, data, client = public_fixture(8)
+        boot['events'][0].update(finished=True, data_checked=True)
+        boot['events'].append(dict(id=9, is_next=True, finished=False))
+        players, _ = league(); s=snapshot()
+        s['events']=boot['events']
+        s['players']=[dict(id=p['id'],web_name=p['name'],element_type=p['position'],
+                           team=p['team'],now_cost=52,status='a') for p in players]
+        s['histories']={str(p['id']):s['histories']['1'] for p in players}
+        data['bootstrap-static/']=boot
+        key=base64.urlsafe_b64encode(bytes(range(32))).decode()
+        plan=dict(best=dict(objective=1, weeks=[],status='ok',gap=0),
+                  hold=dict(objective=1),gain=0,gain_interval=[0,0])
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            with patch('fpl_planner.report.collect',return_value=s),patch('fpl_planner.report.compare',return_value=plan) as solve:
+                result=run_review(root,client,state={'private_marker':'never-use-me'},key=key,entry_id=42)
+                self.assertEqual(result['personal'],'encrypted')
+                resolved=solve.call_args.args[1]
+                self.assertEqual(resolved['free_transfers'],5)
+                report=unseal((root/'reports/private/latest.enc').read_bytes(),key)
+                self.assertEqual(report['baseline']['published_gameweek'],8)
+                self.assertEqual(report['baseline']['bank'],250)
+                self.assertIn('Published GW8',personal_markdown(report))
+                self.assertNotIn('never-use-me',(root/'reports/latest.md').read_text())
+                self.assertEqual(run_review(root,client,key=key,entry_id=42)['status'],'unchanged')
+                data['entry/42/history/']['current'][-1]['bank']=249
+                old=(root/'data/manifest.json').read_bytes()
+                cipher=(root/'reports/private/latest.enc').read_bytes()
+                with self.assertRaises(ValueError):run_review(root,client,key=key,entry_id=42)
+                self.assertEqual((root/'data/manifest.json').read_bytes(),old)
+                self.assertEqual((root/'reports/private/latest.enc').read_bytes(),cipher)
+
+    def test_cli_uses_public_config_without_parsing_legacy_secret(self):
+        from fpl_planner.cli import main
+        key=base64.urlsafe_b64encode(bytes(range(32))).decode()
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);(root/'config').mkdir()
+            (root/'config/entry.json').write_text('{"entry_id":42}')
+            with patch('sys.argv',['fpl-planner','review','--root',tmp]),patch.dict(
+                    'os.environ',{'FPL_TEAM_STATE':'invalid legacy JSON','REPORT_ENCRYPTION_KEY':key}),patch(
+                    'fpl_planner.cli.run_review',return_value={'status':'unchanged'}) as run:
+                self.assertEqual(main(),0)
+                self.assertEqual(run.call_args.kwargs['entry_id'],42)
+                self.assertIsNone(run.call_args.kwargs['state'])
+
     def test_public_pipeline_and_duplicate_skip(self):
         from fpl_planner.report import run_review
         with tempfile.TemporaryDirectory() as tmp:

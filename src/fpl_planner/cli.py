@@ -19,9 +19,11 @@ def main():
     args=parser.parse_args()
     try:
         if args.command=='review':
-            raw=os.environ.get('FPL_TEAM_STATE')
+            config_path=args.root/'config/entry.json'
+            entry_id=json.loads(config_path.read_text())['entry_id'] if config_path.exists() else None
+            raw=os.environ.get('FPL_TEAM_STATE') if entry_id is None else None
             state=json.loads(raw) if raw else None
-            result=run_review(args.root,FPLClient(),state=state,key=os.environ.get('REPORT_ENCRYPTION_KEY'),force=args.force)
+            result=run_review(args.root,FPLClient(),state=state,key=os.environ.get('REPORT_ENCRYPTION_KEY'),force=args.force,entry_id=entry_id)
             print(json.dumps(result))
         else:
             result=unseal(args.input.read_bytes(),args.key_file.read_text().strip())

@@ -38,7 +38,6 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Generate public research and encrypted private report
         env:
-          FPL_TEAM_STATE: ${{ secrets.FPL_TEAM_STATE }}
           REPORT_ENCRYPTION_KEY: ${{ secrets.REPORT_ENCRYPTION_KEY }}
         shell: bash
         run: |

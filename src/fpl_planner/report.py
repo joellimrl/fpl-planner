@@ -11,6 +11,7 @@ from .forecast import LIMITATIONS, future_events, project
 from .optimise import compare
 from .privacy import canonical, fingerprint, seal
 from .state import validate_state
+from .public_state import load_public_state
 from .evaluation import evaluate
 
 
@@ -54,6 +55,12 @@ def personal_markdown(report):
            '',f"Best incumbent plan: {best['objective']:.2f} net points; wait-now incumbent: {hold['objective']:.2f}.",
            f"Incumbent difference: {comparison['gain']:.2f}; solver-bound interval: {comparison['gain_interval']}.",
            f"Solver status: {best['status']}; relative gap: {best['gap']}. A positive incumbent difference alone is not proof of a better first action when bounds overlap."]
+    baseline=report.get('baseline')
+    if baseline and baseline.get('source')=='public_deadline':
+        lines[3:3]=['',f"Baseline: Published GW{baseline['published_gameweek']}; permanent squad from GW{baseline['squad_gameweek']}. "
+                    f"Bank: £{baseline['bank']/10:.1f}m; free transfers available: {baseline['free_transfers']}.",
+                    baseline['note'],
+                    'Recommendations assume this published baseline. If you have already made transfers for the upcoming deadline, reconcile them before acting.']
     for week in best['weeks']:
         lines.extend(['',f"## Gameweek {week['event']}",'',f"Sell: {names(week['sells'])}",
                       f"Buy: {names(week['buys'])}",f"Hit: {week['hit']} points. Bank: £{week['bank']/10:.1f}m. Free transfers next week: {week['next_free_transfers']}.",
@@ -65,18 +72,22 @@ def personal_markdown(report):
     return '\n'.join(lines)+'\n'
 
 
-def run_review(root,client,state=None,key=None,force=False):
+def run_review(root,client,state=None,key=None,force=False,entry_id=None):
     root=Path(root);root.mkdir(parents=True,exist_ok=True)
     config_path=root/'config/model.json'
     config=json.loads(config_path.read_text()) if config_path.exists() else {'horizon':6}
     boot=client.get('bootstrap-static/')
     complete=completed_events(boot)
     if not complete:return {'status':'no_completed_gameweek'}
+    next_event=next(iter(future_events({'events':boot['events'],'completed':complete},1)),None)
+    if next_event is None:return {'status':'season_complete'}
+    if entry_id is not None:
+        state=load_public_state(client,boot,entry_id,next_event)
     first=next((e for e in boot['events'] if e['id']==1),{})
     year=first.get('deadline_time','unknown')[:4]
     season=f'{year}-{int(year)+1}' if year.isdigit() else 'unknown'
     marker=dict(season=season,completed=max(complete),model=__version__,
-                next_event=next(iter(future_events({'events':boot['events'],'completed':complete},1)),None),
+                next_event=next_event,
                 config=hashlib.sha256(canonical(config)).hexdigest(),
                 private=fingerprint(state,key) if state is not None and key else None)
     manifest=root/'data/manifest.json'
@@ -95,6 +106,8 @@ def run_review(root,client,state=None,key=None,force=False):
             plans=compare(players,validated,events,config)
             report=dict(collected_at=snap['collected_at'],model=__version__,events=events,
                         state_effective_gameweek=validated['effective_gameweek'],
+                        baseline={**validated.get('baseline',{}), 'bank':validated['bank'],
+                                  'free_transfers':validated['free_transfers']},
                         comparison=plans,players={p['id']:p['name'] for p in players},
                         limitations=LIMITATIONS)
             private_cipher=seal(report,key);personal_status='encrypted'

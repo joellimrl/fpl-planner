@@ -11,15 +11,19 @@ A numerical Fantasy Premier League research pipeline. A public GitHub repository
 
 ## What runs
 
-Hourly at minute 23 UTC, `FPL gameweek review` fetches FPL metadata. It runs full collection only for a newly completed **and data-checked** gameweek, changed private state, or a manual forced refresh. Initial setup processes the latest completed gameweek, rather than generating every old report. Forecasts start at the next deadline (`is_next`), not an unfinished current round.
+Hourly at minute 23 UTC, `FPL gameweek review` fetches FPL metadata and your latest published deadline squad. It runs full collection only for a newly completed **and data-checked** gameweek, a changed deadline/baseline/model configuration, or a manual forced refresh. Initial setup processes the latest completed gameweek, rather than generating every old report. Forecasts start at the next deadline (`is_next`), not an unfinished current round.
 
 New public reports appear in [reports/latest.md](reports/latest.md). Compact, gzip-compressed evidence is kept under `data/snapshots` and component forecasts under `data/forecasts`. One workflow writer commits the outputs together. Repeated unchanged checks skip collection and optimisation. Scheduled runs may be delayed; use manual dispatch before a deadline when needed. GitHub may disable scheduled public workflows after 60 days without repository activity; re-enable after the off-season. We do not make artificial keepalive commits.
 
 ### Privacy
 
-This is a **public repository**. Public reports contain league-wide rankings, source links, assumptions and forecast diagnostics, never the private live squad, bank or personalised transfers. Your FPL identifier is not needed in public config.
+This is a **public repository**. Public reports contain league-wide rankings, source links, assumptions and forecast diagnostics, never the private live squad, bank or personalised transfers. Your public FPL entry ID is configured in [config/entry.json](config/entry.json); it links this repository to your publicly visible FPL profile.
 
-`FPL_TEAM_STATE` is a repository Actions secret. It contains a minimal squad export: effective gameweek, bank, available free transfers, player IDs and purchase/selling prices. No password, cookie or session token is used. State is valid for its explicit gameweek only; after that public research continues and personal analysis reports `state_refresh_required` until you upload a new export. Changes outside the planner require another refresh. Sale prices are recalculated from current price and stored purchase price.
+The scheduled baseline is rebuilt automatically from public entry picks, gameweek history, chip history and transfers. No FPL password, cookie, session token, private squad secret or weekly export is required. It uses the **latest locked deadline**, even when that gameweek's matches are still running. Player forecasting statistics still use only completed and data-checked rounds.
+
+Original purchase prices come from season-start prices (`now_cost - cost_change_start`); subsequent purchases use actual public transaction costs. Squad membership, bank and transfer hits are reconciled against the published records. Sale prices are recalculated from current market prices and reconstructed purchase prices. Free transfers roll up to five; Wildcard/Free Hit retain the allowance without adding another transfer. A Free Hit's temporary squad, prices and bank are excluded from the permanent baseline. Unknown chips/rule overrides, missing records, late-joining entries and inconsistent finances stop the run without replacing previous reports; the previous dated report remains available. These cases need explicit support rather than guessed prices or allowances.
+
+**Changes for the upcoming deadline are deliberately ignored until FPL publishes them.** The encrypted personal report identifies the published baseline gameweek, bank and available transfers. For example, planning GW9 from published GW8 excludes any transfers you have already made for GW9. Reconcile those changes before acting on a recommendation. The planner does not log into FPL or submit transfers/lineups.
 
 Personalised results are AES-256-GCM encrypted **before** being saved in `reports/private/*.enc`. `REPORT_ENCRYPTION_KEY` is a generated Actions secret and an ignored local `.private/report.key` file. The public manifest uses keyed HMAC fingerprints, not a brute-forceable plain hash of your finances. Private plaintext is never written to workflow summaries, log output or tracked files. Tests use generic synthetic squads. PR checks are read-only and receive no secrets.
 
@@ -54,7 +58,9 @@ python -m fpl_planner decrypt
 
 This writes readable Markdown to ignored `.private/latest-report.md`, using `.private/report.key`. The key never goes in a command-line argument. An already-existing local key is preserved on setup.
 
-To refresh exact squad finances, save the authenticated FPL `my-team` JSON export locally in `.private` (do not include cookies/headers), then:
+### Optional legacy private-export mode
+
+The scheduled workflow uses public data. For a separate local setup requiring unpublished changes, omit `config/entry.json` and provide `FPL_TEAM_STATE`. Public config takes precedence whenever present, even if an old state secret remains configured. The old export tool is retained for this optional mode. Save the authenticated FPL `my-team` JSON export locally in `.private` (do not include cookies/headers), then:
 
 ```sh
 python scripts/sync_state.py --repo joellimrl/fpl-planner --input .private/my-team.json --gameweek 10
@@ -74,7 +80,7 @@ The upload tool passes data to `gh secret set` through stdin, never shell argume
 }
 ```
 
-Supply all 15 unique picks with valid positional counts and at most three per club. `FPL_TEAM_STATE` and `REPORT_ENCRYPTION_KEY` are the only manual secrets; GitHub provides its own short-lived `GITHUB_TOKEN` with scoped repository-content write permission. Optional notifications are deliberately excluded from v1.
+Supply all 15 unique picks with valid positional counts and at most three per club. Legacy state is valid for its explicit gameweek only. **The normal public workflow requires only `REPORT_ENCRYPTION_KEY`**, used to protect personalised recommendations. GitHub provides its own short-lived `GITHUB_TOKEN` with scoped repository-content write permission. Optional notifications are deliberately excluded from v1.
 
 ## Numerical model
 
@@ -97,6 +103,12 @@ Same snapshot/config and solver version define the mathematical problem. HiGHS i
 - [FPL players and gameweek metadata](https://fantasy.premierleague.com/api/bootstrap-static/)
 - [FPL fixtures](https://fantasy.premierleague.com/api/fixtures/)
 - Player histories: `https://fantasy.premierleague.com/api/element-summary/{id}/`
+- Published entry: `https://fantasy.premierleague.com/api/entry/{entry_id}/`
+- Deadline squad: `https://fantasy.premierleague.com/api/entry/{entry_id}/event/{gameweek}/picks/`
+- Entry history/chips: `https://fantasy.premierleague.com/api/entry/{entry_id}/history/`
+- Entry transactions: `https://fantasy.premierleague.com/api/entry/{entry_id}/transfers/`
+- [Transfer, price and chip rules](https://www.premierleague.com/es/news/4661029)
+- [Public baseline design](docs/superpowers/specs/2026-10-26-public-baseline-design.md)
 - [Design](docs/superpowers/specs/2026-10-26-fpl-planner-design.md)
 - [Implementation plan](docs/superpowers/plans/2026-10-26-fpl-planner.md)
 
