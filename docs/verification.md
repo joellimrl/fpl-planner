@@ -15,6 +15,14 @@ The reviewer found the transfer-minimum, five-free-transfer cap, original-player
 - Personal state/key ignored by git; personalised report encrypted and locally decryptable.
 - Workflow YAML parsed locally; the real GitHub standard-runner execution is verified during publication.
 
+## GitHub verification
+
+- Public visibility and `main` default branch verified through GitHub API; scheduled workflow state is `active`.
+- [Offline checks](https://github.com/joellimrl/fpl-planner/actions/runs/40295617209): passed on the standard Ubuntu runner.
+- [Forced live review](https://github.com/joellimrl/fpl-planner/actions/runs/40295625527): passed, 669 public players, personal output encrypted, bot commit succeeded. Downloaded ciphertext decrypted with the locally retained key.
+- [Duplicate check](https://github.com/joellimrl/fpl-planner/actions/runs/40295782542): passed, returned `unchanged` without recollection or re-optimisation.
+- Initial hosted run exposed deprecated action runtimes. Replaced starter actions with current official checkout v7.0.1 and setup-python v7.1.0, pinned to their verified commit SHAs; subsequent CI/manual dispatch verifies these exact versions.
+
 ## Important limits
 
 No claim of an unbiased historical strategy backtest. Starting forecast parameters are uncalibrated. The retrospective diagnostic uses current metadata and is labelled accordingly. No automatic substitutions, vice fallback, chip choices or future price changes in the MILP objective; maximum two transfers per week. Bounds/status distinguish proven-to-tolerance and limited search results. Report-only; no FPL write credentials or account actions in the scheduled system.
