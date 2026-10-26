@@ -76,6 +76,7 @@ def run_review(root,client,state=None,key=None,force=False):
     year=first.get('deadline_time','unknown')[:4]
     season=f'{year}-{int(year)+1}' if year.isdigit() else 'unknown'
     marker=dict(season=season,completed=max(complete),model=__version__,
+                next_event=next(iter(future_events({'events':boot['events'],'completed':complete},1)),None),
                 config=hashlib.sha256(canonical(config)).hexdigest(),
                 private=fingerprint(state,key) if state is not None and key else None)
     manifest=root/'data/manifest.json'
@@ -116,4 +117,6 @@ def run_review(root,client,state=None,key=None,force=False):
         for name in files:
             dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True)
             os.replace(staged/name,dest)
+        if private_cipher is None:
+            (root/'reports/private/latest.enc').unlink(missing_ok=True)
     return dict(status='generated',completed=max(complete),personal=personal_status,players=len(players))

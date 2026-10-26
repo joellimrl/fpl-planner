@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "horizon": 6,
   "decay": 0.85,
   "prior_minutes": 450,

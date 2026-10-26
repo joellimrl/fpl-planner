@@ -48,5 +48,29 @@ class OptimiseTests(unittest.TestCase):
             self.assertGreaterEqual(week['bank'],0)
         self.assertEqual(plan['weeks'][0]['next_free_transfers'],2)
 
+    def test_discount_cannot_fund_sale_and_rebuy_of_initial_player(self):
+        from fpl_planner.optimise import solve
+        players,state=league();state['bank']=0
+        owned={p['element'] for p in state['squad']}
+        original=next(p for p in players if p['position']==1 and p['id'] in owned)
+        replacement=next(p for p in players if p['position']==1 and p['id'] not in owned)
+        # Three existing members of club 99 force selling this exact goalkeeper to buy replacement.
+        original['team']=99;replacement['team']=99
+        for p in [p for p in players if p['position']==2 and p['id'] in owned][:2]:p['team']=99
+        original['price']=100;original['forecasts']={9:0.,10:30.}
+        replacement['forecasts']={9:20.,10:0.}
+        # Original sale raises 75, then replacement costs 50. Only 25 remains, insufficient to rebuy at 100.
+        plan=solve(players,state,[9,10],{'time_limit':10,'max_transfers':1})
+        self.assertNotIn(replacement['id'],plan['weeks'][0]['buys'])
+
+    def test_solver_rollover_cap_and_replay_accounting(self):
+        from fpl_planner.optimise import solve,transfer_accounting
+        players,state=league();state['free_transfers']=5
+        plan=solve(players,state,[9,10,11],{'time_limit':10,'max_transfers':0})
+        for week in plan['weeks']:
+            self.assertEqual(week['next_free_transfers'],5)
+            self.assertEqual(week['hit'],0)
+            self.assertEqual(week['bank'],10)
+
 
 if __name__=='__main__':unittest.main()

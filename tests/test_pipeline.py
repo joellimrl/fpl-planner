@@ -96,5 +96,37 @@ class PipelineTests(unittest.TestCase):
                 with self.assertRaises(RuntimeError):run_review(root,Client(),state=state,key=key,force=True)
             self.assertEqual(old,(root/'data/manifest.json').read_bytes())
 
+    def test_deadline_advance_invalidates_private_latest_even_without_new_completed_week(self):
+        from fpl_planner.report import run_review
+        from tests.helpers import league
+        players,state=league();s=snapshot()
+        s['players']=[dict(id=p['id'],web_name=p['name'],element_type=p['position'],
+                           team=p['team'],now_cost=p['price'],status='a') for p in players]
+        s['histories']={str(p['id']):s['histories']['1'] for p in players}
+        key=base64.urlsafe_b64encode(bytes(range(32))).decode()
+        boot={'events':s['events'],'elements':s['players'],'teams':s['teams']}
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);client=Client()
+            with patch('fpl_planner.report.collect',return_value=s),patch.object(client,'get',return_value=boot):
+                self.assertEqual(run_review(root,client,state=state,key=key)['personal'],'encrypted')
+                self.assertTrue((root/'reports/private/latest.enc').exists())
+                # Deadline 9 passes, but its results are not yet finalised.
+                boot['events'].extend([{'id':10,'is_next':True,'finished':False}])
+                result=run_review(root,client,state=state,key=key)
+                self.assertEqual(result['status'],'generated')
+                self.assertEqual(result['personal'],'state_refresh_required')
+                self.assertFalse((root/'reports/private/latest.enc').exists())
+
+    def test_missing_private_configuration_removes_latest_but_preserves_archive(self):
+        from fpl_planner.report import run_review
+        for state,key in [(None,None),({'effective_gameweek':9},None)]:
+            with self.subTest(state_present=state is not None),tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp);folder=root/'reports/private';folder.mkdir(parents=True)
+                (folder/'latest.enc').write_bytes(b'old-ciphertext')
+                archive=folder/'old-gameweek.enc';archive.write_bytes(b'old-ciphertext')
+                run_review(root,Client(),state=state,key=key,force=True)
+                self.assertFalse((folder/'latest.enc').exists())
+                self.assertEqual(archive.read_bytes(),b'old-ciphertext')
+
 
 if __name__=='__main__':unittest.main()

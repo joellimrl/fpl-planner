@@ -116,7 +116,7 @@ def solve(players,state,events,config,hold_now=False):
     res=m.run(config)
     if res.x is None or res.status not in (0,1):
         raise RuntimeError('Optimiser found no feasible plan within its limits')
-    # Reject any solver result whose incumbent violates the original constraints.
+    # Check bounds/integrality here. HiGHS enforces the sparse linear constraints.
     x=res.x
     for i in range(len(x)):
         if x[i]<m.lo[i]-1e-5 or x[i]>m.hi[i]+1e-5 or abs(x[i]-round(x[i]))>1e-5:
