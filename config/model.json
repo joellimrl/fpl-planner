@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0",
+  "horizon": 6,
+  "decay": 0.85,
+  "prior_minutes": 450,
+  "max_transfers": 2,
+  "node_limit": 3000,
+  "time_limit": 90,
+  "mip_rel_gap": 0.0001
+}

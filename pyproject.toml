@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fpl-planner"
+version = "0.1.0"
+description = "Reproducible FPL forecasts and transfer plans with free GitHub scheduling"
+requires-python = ">=3.12"
+dependencies = ["scipy>=1.15,<2", "cryptography>=46,<49"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
