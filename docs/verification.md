@@ -31,7 +31,12 @@ The scheduled workflow now reconstructs the latest published deadline squad auto
 
 ## Public baseline update (v0.2.0)
 
-- Offline suite: 40 tests passed, including public reconstruction, transfer chips, price rebuy, hit reconciliation, missing history, public-over-private precedence, encrypted provenance and atomic failure.
+- Offline suite: 41 tests passed, including public reconstruction, transfer chips, price rebuy, hit reconciliation, missing history, public-over-private precedence, encrypted provenance and atomic failure.
 - Real entry public sync: 15 players from published GW8, £1.7m bank and two free transfers for GW9. All 13 holdings shared with the previously saved authenticated seed had matching reconstructed purchase prices.
 - The workflow no longer reads `FPL_TEAM_STATE`. Only the report encryption key remains necessary; squad data is fetched without FPL credentials.
-- Independent review and hosted end-to-end verification are recorded below when complete.
+- Fresh independent review found three important issues: arbitrary simultaneous-transfer bank ordering, a deadline passing during collection, and public validation failure replacing previous personal output. All three were reproduced RED and fixed GREEN; the full suite passed 41 tests. No new findings were deferred.
+- [Hosted offline checks](https://github.com/joellimrl/fpl-planner/actions/runs/40318114141): passed.
+- [Public-baseline live review](https://github.com/joellimrl/fpl-planner/actions/runs/40318115188): passed; 669 players; six forecast events GW9–14; encrypted personal report committed. Downloaded ciphertext decrypted locally and verified as published GW8, bank17, FT2. Best solve reached configured optimality tolerance with gap zero.
+- [Duplicate run](https://github.com/joellimrl/fpl-planner/actions/runs/40318300221): passed, returned `unchanged` without full collection or optimisation.
+- Removed obsolete repository secret `FPL_TEAM_STATE`; only `REPORT_ENCRYPTION_KEY` remains. Confirmed public repository, main default branch and active scheduled workflow.
+- Implementation choice: retained this task's dedicated checkout on a feature branch, then fast-forwarded main after tests/review. No additional worktree was needed.
