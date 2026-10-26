@@ -27,4 +27,11 @@ The reviewer found the transfer-minimum, five-free-transfer cap, original-player
 
 No claim of an unbiased historical strategy backtest. Starting forecast parameters are uncalibrated. The retrospective diagnostic uses current metadata and is labelled accordingly. No automatic substitutions, vice fallback, chip choices or future price changes in the MILP objective; maximum two transfers per week. Bounds/status distinguish proven-to-tolerance and limited search results. Report-only; no FPL write credentials or account actions in the scheduled system.
 
-Private state must be refreshed for every new planning gameweek and after changes made outside the planner. Loss of the local encryption key prevents reading existing private reports. Public research continues when private state is unavailable. Scheduled execution is best-effort and may be disabled after 60 inactive days; no paid fallback is configured.
+The scheduled workflow now reconstructs the latest published deadline squad automatically; no weekly private-state upload is required. Unpublished upcoming-deadline changes are excluded by design. Loss of the local encryption key prevents reading existing private reports. Public sync inconsistencies fail the run atomically, retaining prior dated reports. Scheduled execution is best-effort and may be disabled after 60 inactive days; no paid fallback is configured.
+
+## Public baseline update (v0.2.0)
+
+- Offline suite: 40 tests passed, including public reconstruction, transfer chips, price rebuy, hit reconciliation, missing history, public-over-private precedence, encrypted provenance and atomic failure.
+- Real entry public sync: 15 players from published GW8, £1.7m bank and two free transfers for GW9. All 13 holdings shared with the previously saved authenticated seed had matching reconstructed purchase prices.
+- The workflow no longer reads `FPL_TEAM_STATE`. Only the report encryption key remains necessary; squad data is fetched without FPL credentials.
+- Independent review and hosted end-to-end verification are recorded below when complete.
