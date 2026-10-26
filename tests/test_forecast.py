@@ -44,5 +44,11 @@ class ForecastTests(unittest.TestCase):
         above=project(s,{'horizon':1})[0]['components'][9]['defensive']
         self.assertGreater(above,below)
 
+    def test_forecasts_start_at_next_deadline_not_unfinished_current_event(self):
+        from fpl_planner.forecast import future_events
+        s=snapshot();s['events'].append({'id':8,'finished':False,'is_current':True})
+        s['events'][2]['is_next']=True
+        self.assertEqual(future_events(s,6),[9])
+
 
 if __name__=='__main__':unittest.main()

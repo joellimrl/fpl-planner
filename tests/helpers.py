@@ -13,7 +13,7 @@ def league():
 
 
 def snapshot():
-    return dict(completed=[1,2],events=[dict(id=1,finished=True,data_checked=True),
+    return dict(collected_at='2026-10-26T00:00:00Z',completed=[1,2],events=[dict(id=1,finished=True,data_checked=True),
                   dict(id=2,finished=True,data_checked=True),dict(id=9,finished=False,data_checked=False)],
                 players=[dict(id=1,web_name='Sample',element_type=3,team=1,now_cost=50,
                               status='a',chance_of_playing_next_round=None)],

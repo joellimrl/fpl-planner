@@ -16,7 +16,9 @@ LIMITATIONS = [
 
 def future_events(snapshot, horizon):
     completed = set(snapshot['completed'])
-    return sorted(e['id'] for e in snapshot['events'] if e['id'] not in completed)[:horizon]
+    next_ids = [e['id'] for e in snapshot['events'] if e.get('is_next')]
+    floor = min(next_ids) if next_ids else min((e['id'] for e in snapshot['events'] if e['id'] not in completed), default=39)
+    return sorted(e['id'] for e in snapshot['events'] if e['id'] not in completed and e['id']>=floor)[:horizon]
 
 
 def _team_rates(snapshot):
