@@ -1,6 +1,6 @@
 # FPL numerical review after GW8
 
-Data collected: 2026-10-26T16:14:06.637014+00:00. Model: 0.2.0. Forecast events: 9, 10, 11, 12, 13, 14.
+Data collected: 2026-10-28T05:58:13.114950+00:00. Model: 0.2.0. Forecast events: 9, 10, 11, 12, 13, 14.
 
 This public report contains league-wide research only, never a private squad or personalised transfer plan.
 
@@ -41,7 +41,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Kelleher | £5.0m | 3.55 | 17.00 | 77.7 |
 | Roefs | £4.9m | 3.11 | 16.55 | 77.7 |
 | Horníček | £5.0m | 3.09 | 16.38 | 77.7 |
-| Lammens | £4.9m | 1.95 | 15.28 | 77.7 |
+| Lammens | £4.8m | 1.95 | 15.28 | 77.7 |
 | Rushworth | £4.5m | 2.90 | 14.65 | 77.7 |
 
 ### Defenders
@@ -50,7 +50,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 |---|---:|---:|---:|---:|
 | Gabriel | £7.9m | 4.87 | 29.87 | 77.7 |
 | Muharemović | £5.1m | 4.12 | 25.70 | 77.7 |
-| Vuskovic | £5.1m | 3.46 | 25.40 | 76.5 |
+| Vuskovic | £5.2m | 3.46 | 25.40 | 76.5 |
 | Tarkowski | £6.2m | 3.88 | 25.17 | 77.7 |
 | Hill | £5.5m | 4.35 | 24.91 | 77.7 |
 | Jacquet | £5.1m | 3.83 | 24.27 | 75.3 |
@@ -60,7 +60,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Silva | £5.0m | 4.02 | 23.19 | 77.7 |
 | De Cuyper | £5.3m | 3.09 | 23.16 | 73.1 |
 | Egan | £4.1m | 4.03 | 22.72 | 76.3 |
-| Bogle | £4.7m | 3.49 | 22.08 | 70.1 |
+| Bogle | £4.8m | 3.49 | 22.08 | 70.1 |
 | Justin | £4.5m | 3.44 | 21.60 | 76.2 |
 | Hall | £5.3m | 3.91 | 21.26 | 77.6 |
 
@@ -68,14 +68,13 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
-| Tavernier | £6.3m | 4.26 | 26.71 | 70.5 |
+| Tavernier | £6.4m | 4.26 | 26.71 | 70.5 |
 | Mbeumo | £7.9m | 4.02 | 24.18 | 77.7 |
 | Tonali | £5.3m | 4.28 | 23.34 | 75.9 |
 | Iwobi | £5.4m | 3.83 | 23.03 | 70.3 |
 | Rayan | £6.3m | 3.42 | 21.46 | 76.0 |
-| Rice | £7.4m | 3.43 | 21.28 | 73.3 |
 | Kamara | £5.0m | 3.48 | 21.19 | 77.0 |
-| Ødegaard | £6.8m | 3.35 | 21.12 | 72.0 |
+| Ødegaard | £6.7m | 3.35 | 21.12 | 72.0 |
 | Dewsbury-Hall | £6.6m | 3.45 | 20.81 | 76.8 |
 | Bobb | £5.5m | 3.46 | 20.79 | 63.9 |
 | McAtee | £5.5m | 3.33 | 20.69 | 74.2 |
@@ -83,16 +82,17 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | McGinn | £5.4m | 3.29 | 20.33 | 65.7 |
 | E.Le Fée | £5.7m | 3.51 | 20.21 | 73.7 |
 | Neto | £6.6m | 3.48 | 20.19 | 68.9 |
+| Stach | £6.0m | 3.26 | 20.14 | 66.1 |
 
 ### Forwards
 
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
-| Haaland | £15.7m | 5.03 | 29.90 | 76.3 |
-| Isak | £9.0m | 4.04 | 27.00 | 59.3 |
+| Haaland | £15.8m | 5.03 | 29.90 | 76.3 |
+| Isak | £9.1m | 4.04 | 27.00 | 59.3 |
 | Calvert-Lewin | £6.1m | 3.75 | 23.33 | 74.1 |
 | Evanilson | £6.2m | 3.62 | 23.11 | 73.7 |
-| N.Jackson | £6.7m | 3.65 | 22.95 | 65.2 |
+| N.Jackson | £6.8m | 3.65 | 22.95 | 65.2 |
 | Barry | £5.6m | 3.75 | 21.97 | 75.1 |
 | Kostoulas | £5.8m | 3.22 | 20.30 | 64.5 |
 | Gonzalo | £6.0m | 3.27 | 19.81 | 71.0 |
