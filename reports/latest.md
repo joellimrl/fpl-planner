@@ -1,6 +1,6 @@
 # FPL numerical review after GW8
 
-Data collected: 2026-10-31T13:45:40.120602+00:00. Model: 0.2.0. Forecast events: 10, 11, 12, 13, 14, 15.
+Data collected: 2026-11-01T02:22:39.569093+00:00. Model: 0.2.0. Forecast events: 10, 11, 12, 13, 14, 15.
 
 This public report contains league-wide research only, never a private squad or personalised transfer plan.
 
@@ -54,11 +54,11 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Jacquet | £5.1m | 4.11 | 24.63 | 75.3 |
 | Virgil | £6.4m | 4.10 | 24.62 | 77.7 |
 | Konsa | £4.7m | 4.39 | 24.52 | 67.7 |
-| De Cuyper | £5.3m | 3.88 | 24.44 | 73.1 |
+| De Cuyper | £5.4m | 3.88 | 24.44 | 73.1 |
 | Tarkowski | £6.2m | 4.80 | 24.31 | 77.7 |
 | Hill | £5.5m | 3.91 | 24.21 | 77.7 |
 | Egan | £4.1m | 3.44 | 22.97 | 76.3 |
-| Van Hecke | £4.9m | 3.53 | 22.55 | 77.7 |
+| Van Hecke | £5.0m | 3.53 | 22.55 | 77.7 |
 | Silva | £5.0m | 3.69 | 22.43 | 77.7 |
 | Bogle | £4.8m | 4.09 | 21.98 | 70.1 |
 | Justin | £4.5m | 4.05 | 21.58 | 76.2 |
@@ -68,7 +68,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
-| Tavernier | £6.5m | 4.77 | 26.32 | 70.5 |
+| Tavernier | £6.6m | 4.77 | 26.32 | 70.5 |
 | Mbeumo | £7.9m | 4.21 | 24.59 | 77.7 |
 | Iwobi | £5.4m | 4.15 | 23.00 | 70.3 |
 | Tonali | £5.3m | 3.55 | 22.68 | 75.9 |
@@ -89,10 +89,10 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
 | Haaland | £15.8m | 5.06 | 30.85 | 76.3 |
-| Isak | £9.1m | 4.82 | 27.07 | 59.3 |
-| N.Jackson | £6.9m | 3.64 | 23.06 | 65.2 |
+| Isak | £9.2m | 4.82 | 27.07 | 59.3 |
+| N.Jackson | £7.0m | 3.64 | 23.06 | 65.2 |
 | Calvert-Lewin | £6.1m | 3.77 | 22.97 | 74.1 |
-| Evanilson | £6.3m | 4.23 | 22.83 | 73.7 |
+| Evanilson | £6.4m | 4.23 | 22.83 | 73.7 |
 | Barry | £5.6m | 4.18 | 21.37 | 75.1 |
 | Kostoulas | £5.8m | 3.40 | 20.48 | 64.5 |
 | Gonzalo | £6.0m | 3.72 | 19.81 | 71.0 |
