@@ -1,6 +1,6 @@
 # FPL numerical review after GW9
 
-Data collected: 2026-11-03T17:57:16.267767+00:00. Model: 0.2.0. Forecast events: 10, 11, 12, 13, 14, 15.
+Data collected: 2026-11-04T06:44:58.580751+00:00. Model: 0.2.0. Forecast events: 10, 11, 12, 13, 14, 15.
 
 This public report contains league-wide research only, never a private squad or personalised transfer plan.
 
@@ -50,12 +50,12 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 |---|---:|---:|---:|---:|
 | Gabriel | £8.0m | 5.14 | 28.81 | 78.2 |
 | Van Hecke | £5.0m | 4.49 | 28.27 | 78.2 |
-| Konsa | £4.7m | 4.94 | 27.89 | 70.1 |
+| Konsa | £4.8m | 4.94 | 27.89 | 70.1 |
 | Vuskovic | £5.2m | 4.04 | 25.83 | 77.3 |
 | Muharemović | £5.1m | 4.63 | 25.44 | 78.2 |
 | De Cuyper | £5.4m | 3.85 | 24.70 | 71.4 |
 | Jacquet | £5.1m | 4.05 | 23.89 | 76.3 |
-| Silva | £5.0m | 3.82 | 23.64 | 78.2 |
+| Silva | £5.1m | 3.82 | 23.64 | 78.2 |
 | Tarkowski | £6.2m | 4.45 | 23.38 | 78.2 |
 | Virgil | £6.4m | 3.92 | 23.15 | 78.2 |
 | Hill | £5.5m | 3.66 | 23.08 | 78.2 |
@@ -80,7 +80,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Rudoni | £4.9m | 3.14 | 21.13 | 68.3 |
 | Ayari | £5.4m | 3.40 | 20.96 | 68.6 |
 | Ødegaard | £6.7m | 3.56 | 20.86 | 73.1 |
-| Rogers | £8.1m | 3.63 | 20.80 | 76.9 |
+| Rogers | £8.2m | 3.63 | 20.80 | 76.9 |
 | Bobb | £5.5m | 3.80 | 20.68 | 65.1 |
 | Neto | £6.6m | 3.54 | 20.41 | 70.5 |
 
