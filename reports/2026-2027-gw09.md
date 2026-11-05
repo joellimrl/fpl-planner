@@ -1,6 +1,6 @@
 # FPL numerical review after GW9
 
-Data collected: 2026-11-04T06:44:58.580751+00:00. Model: 0.2.0. Forecast events: 10, 11, 12, 13, 14, 15.
+Data collected: 2026-11-05T02:37:14.302703+00:00. Model: 0.2.0. Forecast events: 10, 11, 12, 13, 14, 15.
 
 This public report contains league-wide research only, never a private squad or personalised transfer plan.
 
