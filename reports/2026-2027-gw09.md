@@ -1,6 +1,6 @@
 # FPL numerical review after GW9
 
-Data collected: 2026-11-08T06:22:43.762564+00:00. Model: 0.2.0. Forecast events: 11, 12, 13, 14, 15, 16.
+Data collected: 2026-11-09T02:47:17.577903+00:00. Model: 0.2.0. Forecast events: 11, 12, 13, 14, 15, 16.
 
 This public report contains league-wide research only, never a private squad or personalised transfer plan.
 
@@ -38,7 +38,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Pickford | £5.5m | 2.68 | 18.48 | 78.2 |
 | Suzuki | £5.0m | 3.56 | 18.40 | 74.2 |
 | Leno | £4.5m | 2.43 | 18.40 | 78.2 |
-| Donnarumma | £5.5m | 3.35 | 17.55 | 78.2 |
+| Donnarumma | £5.4m | 3.35 | 17.55 | 78.2 |
 | Lammens | £4.8m | 2.74 | 16.66 | 78.2 |
 | Roefs | £4.9m | 2.57 | 16.50 | 78.2 |
 | Horníček | £5.0m | 2.74 | 15.80 | 78.2 |
@@ -49,11 +49,11 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
 | Gabriel | £8.1m | 4.87 | 29.09 | 78.2 |
-| Van Hecke | £5.0m | 4.97 | 28.13 | 78.2 |
+| Van Hecke | £5.1m | 4.97 | 28.13 | 78.2 |
 | Konsa | £4.8m | 4.69 | 28.07 | 70.1 |
-| Vuskovic | £5.2m | 4.10 | 26.27 | 77.3 |
+| Vuskovic | £5.3m | 4.10 | 26.27 | 77.3 |
 | Muharemović | £5.1m | 3.71 | 25.56 | 78.2 |
-| De Cuyper | £5.4m | 3.89 | 25.22 | 71.4 |
+| De Cuyper | £5.5m | 3.89 | 25.22 | 71.4 |
 | Silva | £5.1m | 4.80 | 24.42 | 78.2 |
 | Jacquet | £5.1m | 4.18 | 23.93 | 76.3 |
 | Hill | £5.6m | 4.67 | 23.84 | 78.2 |
@@ -82,7 +82,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Dewsbury-Hall | £6.6m | 3.29 | 20.82 | 77.5 |
 | Rogers | £8.2m | 3.28 | 20.78 | 76.9 |
 | Rayan | £6.3m | 3.73 | 20.60 | 76.4 |
-| Xhaka | £5.3m | 3.32 | 20.59 | 78.2 |
+| Neto | £6.6m | 3.25 | 20.39 | 70.5 |
 
 ### Forwards
 
@@ -91,18 +91,18 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Haaland | £15.8m | 5.04 | 28.84 | 77.1 |
 | N.Jackson | £7.1m | 4.46 | 25.58 | 68.0 |
 | Evanilson | £6.5m | 4.45 | 25.28 | 72.6 |
-| Isak | £9.2m | 4.44 | 25.04 | 63.3 |
+| Isak | £9.3m | 4.44 | 25.04 | 63.3 |
 | Barry | £5.7m | 3.92 | 24.79 | 74.3 |
 | Calvert-Lewin | £6.0m | 3.67 | 22.12 | 75.4 |
 | McBurnie | £5.5m | 3.23 | 20.78 | 76.9 |
 | Havertz | £7.4m | 3.45 | 20.28 | 61.1 |
-| Thiago | £7.8m | 3.29 | 20.13 | 77.9 |
 | Kostoulas | £5.8m | 3.05 | 19.77 | 64.5 |
 | Gonzalo | £5.9m | 3.01 | 18.48 | 72.2 |
-| Emersonn | £5.5m | 2.81 | 17.70 | 60.2 |
+| Emersonn | £5.4m | 2.81 | 17.70 | 60.2 |
 | Marmoush | £7.0m | 3.16 | 16.71 | 59.8 |
 | Brobbey | £5.7m | 2.62 | 16.43 | 52.5 |
 | Delap | £5.3m | 2.68 | 16.23 | 63.6 |
+| Thomas-Asante | £5.0m | 2.65 | 14.15 | 48.0 |
 
 ## Sources
 
