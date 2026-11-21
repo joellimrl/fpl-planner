@@ -1,6 +1,6 @@
 # FPL numerical review after GW10
 
-Data collected: 2026-11-21T02:35:51.582922+00:00. Model: 0.2.0. Forecast events: 11, 12, 13, 14, 15, 16.
+Data collected: 2026-11-21T19:33:15.719665+00:00. Model: 0.2.0. Forecast events: 12, 13, 14, 15, 16, 17.
 
 This public report contains league-wide research only, never a private squad or personalised transfer plan.
 
@@ -28,81 +28,81 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
-| Trafford | £5.0m | 4.11 | 27.32 | 78.7 |
-| Verbruggen | £4.7m | 4.18 | 25.10 | 78.7 |
-| Tzolakis | £4.7m | 3.49 | 24.37 | 78.7 |
-| Raya | £6.3m | 3.91 | 23.44 | 78.7 |
-| A.Becker | £5.5m | 3.43 | 20.95 | 78.7 |
-| Kinsky | £4.4m | 3.12 | 19.29 | 78.7 |
-| Roefs | £4.8m | 2.82 | 19.00 | 78.7 |
-| Kelleher | £5.0m | 3.39 | 18.89 | 78.7 |
-| Leno | £4.5m | 2.54 | 18.82 | 78.7 |
-| Pickford | £5.5m | 2.88 | 18.58 | 78.7 |
-| Donnarumma | £5.4m | 3.15 | 16.63 | 78.7 |
-| Suzuki | £5.1m | 3.27 | 16.61 | 75.4 |
-| Horníček | £5.0m | 2.86 | 16.26 | 78.7 |
-| Lammens | £4.8m | 2.47 | 15.94 | 78.7 |
-| Petrović | £4.5m | 2.98 | 15.24 | 78.7 |
+| Trafford | £5.0m | 5.05 | 27.67 | 78.7 |
+| Verbruggen | £4.7m | 4.28 | 25.19 | 78.7 |
+| Tzolakis | £4.7m | 4.32 | 25.13 | 78.7 |
+| A.Becker | £5.5m | 3.31 | 20.92 | 78.7 |
+| Pickford | £5.5m | 3.31 | 19.51 | 78.7 |
+| Kinsky | £4.4m | 3.45 | 19.22 | 78.7 |
+| Roefs | £4.8m | 3.45 | 19.16 | 78.7 |
+| Leno | £4.5m | 3.16 | 18.82 | 78.7 |
+| Kelleher | £5.0m | 2.96 | 18.38 | 78.7 |
+| Raya | £6.3m | 2.74 | 17.76 | 59.0 |
+| Lammens | £4.8m | 2.60 | 16.68 | 78.7 |
+| Suzuki | £5.1m | 2.40 | 16.42 | 75.4 |
+| Donnarumma | £5.4m | 2.45 | 16.10 | 78.7 |
+| Horníček | £5.0m | 1.88 | 15.85 | 78.7 |
+| Petrović | £4.5m | 2.61 | 14.87 | 78.7 |
 
 ### Defenders
 
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
-| Gabriel | £8.1m | 5.00 | 30.00 | 78.7 |
-| Konsa | £4.9m | 4.86 | 29.15 | 72.0 |
-| Muharemović | £5.1m | 4.31 | 28.63 | 78.7 |
-| Van Hecke | £5.1m | 5.04 | 28.39 | 78.7 |
-| Vuskovic | £5.3m | 4.59 | 28.29 | 77.9 |
-| De Cuyper | £5.5m | 4.15 | 26.13 | 71.6 |
-| Jacquet | £5.1m | 4.32 | 25.45 | 77.1 |
-| Hill | £5.6m | 4.73 | 25.34 | 78.7 |
-| Virgil | £6.4m | 4.13 | 24.47 | 78.7 |
-| Justin | £4.5m | 3.60 | 24.38 | 76.8 |
-| Araujo | £5.5m | 4.19 | 24.12 | 64.7 |
-| Silva | £5.1m | 4.50 | 23.92 | 78.7 |
-| Murillo | £5.5m | 3.53 | 22.63 | 78.6 |
-| Bogle | £4.8m | 3.29 | 22.56 | 73.6 |
-| Tarkowski | £6.2m | 3.40 | 21.81 | 78.7 |
+| Gabriel | £8.1m | 4.76 | 30.45 | 78.7 |
+| Konsa | £4.9m | 4.64 | 29.50 | 72.0 |
+| Muharemović | £5.1m | 5.38 | 29.00 | 78.7 |
+| Vuskovic | £5.3m | 4.91 | 28.40 | 77.9 |
+| Van Hecke | £5.1m | 5.07 | 28.05 | 78.7 |
+| De Cuyper | £5.5m | 4.61 | 26.25 | 71.6 |
+| Jacquet | £5.1m | 3.95 | 25.18 | 77.1 |
+| Hill | £5.6m | 4.26 | 24.86 | 78.7 |
+| Justin | £4.5m | 4.70 | 24.75 | 76.8 |
+| Virgil | £6.4m | 3.80 | 24.24 | 78.7 |
+| Araujo | £5.5m | 3.70 | 23.73 | 64.7 |
+| Silva | £5.1m | 4.02 | 23.42 | 78.7 |
+| Bogle | £4.8m | 4.44 | 22.94 | 73.6 |
+| Murillo | £5.5m | 3.77 | 22.92 | 78.6 |
+| Tarkowski | £6.2m | 3.85 | 22.85 | 78.7 |
 
 ### Midfielders
 
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
-| E.Le Fée | £5.7m | 4.39 | 26.82 | 75.6 |
-| Tavernier | £6.7m | 4.54 | 25.52 | 73.9 |
-| Ødegaard | £6.7m | 4.10 | 24.61 | 74.5 |
-| Groß | £6.3m | 3.65 | 23.92 | 76.7 |
-| Rice | £7.5m | 3.80 | 22.82 | 71.3 |
-| Dewsbury-Hall | £6.7m | 3.59 | 22.25 | 78.1 |
-| Iwobi | £5.4m | 3.63 | 22.19 | 71.6 |
-| McGinn | £5.5m | 3.78 | 21.64 | 67.0 |
-| Wirtz | £7.3m | 3.89 | 21.39 | 69.9 |
-| Mbeumo | £7.8m | 3.18 | 21.37 | 77.4 |
-| Kamara | £5.0m | 3.67 | 21.26 | 76.6 |
-| Rudoni | £4.9m | 4.07 | 21.12 | 69.8 |
-| Ayari | £5.5m | 3.29 | 21.12 | 68.8 |
-| Rogers | £8.2m | 3.19 | 20.79 | 77.6 |
-| Gomez | £5.1m | 3.27 | 20.78 | 76.5 |
+| E.Le Fée | £5.7m | 4.31 | 26.35 | 75.6 |
+| Ødegaard | £6.7m | 4.09 | 25.10 | 74.5 |
+| Tavernier | £6.7m | 4.15 | 25.06 | 73.9 |
+| Groß | £6.3m | 4.28 | 24.00 | 76.7 |
+| Rice | £7.5m | 3.78 | 23.19 | 71.3 |
+| Dewsbury-Hall | £6.7m | 3.76 | 22.90 | 78.1 |
+| Iwobi | £5.4m | 3.99 | 22.02 | 71.6 |
+| Mbeumo | £7.8m | 3.48 | 21.92 | 77.4 |
+| Rogers | £8.2m | 3.28 | 21.19 | 77.6 |
+| Ayari | £5.5m | 3.73 | 21.18 | 68.8 |
+| McGinn | £5.5m | 3.56 | 20.97 | 67.0 |
+| Kamara | £5.0m | 3.48 | 20.96 | 76.6 |
+| Gomez | £5.1m | 3.64 | 20.83 | 76.5 |
+| Wirtz | £7.3m | 3.26 | 20.83 | 69.9 |
+| Rudoni | £4.9m | 2.98 | 20.56 | 69.8 |
 
 ### Forwards
 
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
-| N.Jackson | £7.2m | 4.90 | 28.76 | 69.5 |
-| Evanilson | £6.5m | 4.87 | 27.77 | 73.1 |
-| Barry | £5.7m | 4.46 | 27.76 | 75.5 |
-| Haaland | £15.8m | 4.75 | 27.11 | 77.8 |
-| Isak | £9.3m | 4.85 | 26.29 | 66.5 |
-| Calvert-Lewin | £6.0m | 3.63 | 22.23 | 76.3 |
-| McBurnie | £5.5m | 3.02 | 19.86 | 77.6 |
-| Havertz | £7.4m | 3.25 | 19.49 | 60.2 |
-| Kostoulas | £5.8m | 2.99 | 19.45 | 66.0 |
-| Delap | £5.3m | 3.18 | 19.14 | 66.0 |
-| Gonzalo | £5.8m | 3.01 | 17.86 | 69.8 |
-| Marmoush | £7.0m | 3.15 | 16.47 | 59.5 |
-| Emersonn | £5.4m | 2.55 | 16.21 | 58.1 |
-| Wissa | £5.9m | 1.98 | 14.03 | 55.2 |
-| Awoniyi | £5.4m | 2.59 | 13.59 | 42.6 |
+| Barry | £5.7m | 4.66 | 28.72 | 75.5 |
+| N.Jackson | £7.2m | 4.80 | 28.04 | 69.5 |
+| Evanilson | £6.5m | 4.51 | 27.33 | 73.1 |
+| Haaland | £15.8m | 3.85 | 27.15 | 77.8 |
+| Isak | £9.3m | 4.01 | 25.51 | 66.5 |
+| Calvert-Lewin | £6.0m | 4.12 | 22.29 | 76.3 |
+| McBurnie | £5.5m | 3.75 | 20.04 | 77.6 |
+| Havertz | £7.4m | 3.28 | 19.87 | 60.2 |
+| Kostoulas | £5.8m | 3.45 | 19.50 | 66.0 |
+| Delap | £5.3m | 3.52 | 19.41 | 66.0 |
+| Gonzalo | £5.8m | 3.30 | 17.66 | 69.8 |
+| Emersonn | £5.4m | 3.00 | 16.35 | 58.1 |
+| Marmoush | £7.0m | 2.85 | 16.20 | 59.5 |
+| Wissa | £5.9m | 1.97 | 14.47 | 55.2 |
+| Thomas-Asante | £5.0m | 1.89 | 12.93 | 42.4 |
 
 ## Sources
 
