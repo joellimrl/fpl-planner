@@ -1,6 +1,6 @@
 # FPL numerical review after GW10
 
-Data collected: 2026-11-21T19:33:15.719665+00:00. Model: 0.2.0. Forecast events: 12, 13, 14, 15, 16, 17.
+Data collected: 2026-11-22T00:30:44.979183+00:00. Model: 0.2.0. Forecast events: 12, 13, 14, 15, 16, 17.
 
 This public report contains league-wide research only, never a private squad or personalised transfer plan.
 
@@ -28,7 +28,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
-| Trafford | £5.0m | 5.05 | 27.67 | 78.7 |
+| Trafford | £5.1m | 5.05 | 27.67 | 78.7 |
 | Verbruggen | £4.7m | 4.28 | 25.19 | 78.7 |
 | Tzolakis | £4.7m | 4.32 | 25.13 | 78.7 |
 | A.Becker | £5.5m | 3.31 | 20.92 | 78.7 |
@@ -52,7 +52,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Konsa | £4.9m | 4.64 | 29.50 | 72.0 |
 | Muharemović | £5.1m | 5.38 | 29.00 | 78.7 |
 | Vuskovic | £5.3m | 4.91 | 28.40 | 77.9 |
-| Van Hecke | £5.1m | 5.07 | 28.05 | 78.7 |
+| Van Hecke | £5.2m | 5.07 | 28.05 | 78.7 |
 | De Cuyper | £5.5m | 4.61 | 26.25 | 71.6 |
 | Jacquet | £5.1m | 3.95 | 25.18 | 77.1 |
 | Hill | £5.6m | 4.26 | 24.86 | 78.7 |
@@ -76,7 +76,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Dewsbury-Hall | £6.7m | 3.76 | 22.90 | 78.1 |
 | Iwobi | £5.4m | 3.99 | 22.02 | 71.6 |
 | Mbeumo | £7.8m | 3.48 | 21.92 | 77.4 |
-| Rogers | £8.2m | 3.28 | 21.19 | 77.6 |
+| Rogers | £8.3m | 3.28 | 21.19 | 77.6 |
 | Ayari | £5.5m | 3.73 | 21.18 | 68.8 |
 | McGinn | £5.5m | 3.56 | 20.97 | 67.0 |
 | Kamara | £5.0m | 3.48 | 20.96 | 76.6 |
@@ -90,7 +90,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 |---|---:|---:|---:|---:|
 | Barry | £5.7m | 4.66 | 28.72 | 75.5 |
 | N.Jackson | £7.2m | 4.80 | 28.04 | 69.5 |
-| Evanilson | £6.5m | 4.51 | 27.33 | 73.1 |
+| Evanilson | £6.6m | 4.51 | 27.33 | 73.1 |
 | Haaland | £15.8m | 3.85 | 27.15 | 77.8 |
 | Isak | £9.3m | 4.01 | 25.51 | 66.5 |
 | Calvert-Lewin | £6.0m | 4.12 | 22.29 | 76.3 |
