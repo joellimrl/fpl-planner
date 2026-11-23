@@ -1,6 +1,6 @@
 # FPL numerical review after GW10
 
-Data collected: 2026-11-22T00:30:44.979183+00:00. Model: 0.2.0. Forecast events: 12, 13, 14, 15, 16, 17.
+Data collected: 2026-11-23T03:50:11.699169+00:00. Model: 0.2.0. Forecast events: 12, 13, 14, 15, 16, 17.
 
 This public report contains league-wide research only, never a private squad or personalised transfer plan.
 
@@ -81,7 +81,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | McGinn | £5.5m | 3.56 | 20.97 | 67.0 |
 | Kamara | £5.0m | 3.48 | 20.96 | 76.6 |
 | Gomez | £5.1m | 3.64 | 20.83 | 76.5 |
-| Wirtz | £7.3m | 3.26 | 20.83 | 69.9 |
+| Wirtz | £7.4m | 3.26 | 20.83 | 69.9 |
 | Rudoni | £4.9m | 2.98 | 20.56 | 69.8 |
 
 ### Forwards
@@ -89,14 +89,14 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
 | Barry | £5.7m | 4.66 | 28.72 | 75.5 |
-| N.Jackson | £7.2m | 4.80 | 28.04 | 69.5 |
+| N.Jackson | £7.3m | 4.80 | 28.04 | 69.5 |
 | Evanilson | £6.6m | 4.51 | 27.33 | 73.1 |
 | Haaland | £15.8m | 3.85 | 27.15 | 77.8 |
 | Isak | £9.3m | 4.01 | 25.51 | 66.5 |
 | Calvert-Lewin | £6.0m | 4.12 | 22.29 | 76.3 |
 | McBurnie | £5.5m | 3.75 | 20.04 | 77.6 |
 | Havertz | £7.4m | 3.28 | 19.87 | 60.2 |
-| Kostoulas | £5.8m | 3.45 | 19.50 | 66.0 |
+| Kostoulas | £5.7m | 3.45 | 19.50 | 66.0 |
 | Delap | £5.3m | 3.52 | 19.41 | 66.0 |
 | Gonzalo | £5.8m | 3.30 | 17.66 | 69.8 |
 | Emersonn | £5.4m | 3.00 | 16.35 | 58.1 |
