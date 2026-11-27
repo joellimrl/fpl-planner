@@ -1,6 +1,6 @@
 # FPL numerical review after GW11
 
-Data collected: 2026-11-24T23:33:21.532836+00:00. Model: 0.2.0. Forecast events: 12, 13, 14, 15, 16, 17.
+Data collected: 2026-11-27T05:12:20.802160+00:00. Model: 0.2.0. Forecast events: 12, 13, 14, 15, 16, 17.
 
 This public report contains league-wide research only, never a private squad or personalised transfer plan.
 
@@ -33,7 +33,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Verbruggen | £4.7m | 4.09 | 24.52 | 79.0 |
 | Roefs | £4.8m | 4.09 | 23.27 | 79.0 |
 | A.Becker | £5.5m | 3.55 | 21.63 | 79.0 |
-| Kinsky | £4.4m | 3.71 | 20.00 | 79.0 |
+| Kinsky | £4.5m | 3.71 | 20.00 | 79.0 |
 | Pickford | £5.5m | 2.95 | 18.71 | 79.0 |
 | Kelleher | £5.0m | 3.08 | 18.61 | 79.0 |
 | Leno | £4.5m | 3.03 | 17.90 | 79.0 |
@@ -48,13 +48,13 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
-| Hill | £5.6m | 4.86 | 28.18 | 79.0 |
+| Hill | £5.7m | 4.86 | 28.18 | 79.0 |
 | Gabriel | £8.1m | 4.36 | 27.66 | 79.0 |
-| Muharemović | £5.1m | 4.91 | 26.99 | 79.0 |
+| Muharemović | £5.2m | 4.91 | 26.99 | 79.0 |
 | Konsa | £4.9m | 4.27 | 26.95 | 73.5 |
 | Van Hecke | £5.2m | 4.92 | 26.63 | 79.0 |
 | Vuskovic | £5.3m | 4.35 | 25.59 | 78.4 |
-| De Cuyper | £5.5m | 4.41 | 25.50 | 73.2 |
+| De Cuyper | £5.6m | 4.41 | 25.50 | 73.2 |
 | Justin | £4.5m | 4.69 | 25.45 | 77.4 |
 | Silva | £5.1m | 4.27 | 24.66 | 79.0 |
 | Jacquet | £5.1m | 4.00 | 24.45 | 77.7 |
@@ -71,7 +71,7 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Tavernier | £6.8m | 4.40 | 26.57 | 75.1 |
 | Groß | £6.3m | 4.49 | 25.38 | 77.4 |
 | E.Le Fée | £5.7m | 4.00 | 25.12 | 76.5 |
-| Wirtz | £7.4m | 4.09 | 25.12 | 71.8 |
+| Wirtz | £7.5m | 4.09 | 25.12 | 71.8 |
 | Ødegaard | £6.7m | 3.93 | 24.13 | 75.5 |
 | Rice | £7.5m | 3.84 | 23.51 | 73.0 |
 | McAtee | £5.5m | 4.01 | 22.50 | 70.8 |
@@ -89,10 +89,10 @@ Projected points are model estimates, not guarantees. All horizon totals are unm
 | Player | Price | Next GW | Horizon | Expected minutes/match |
 |---|---:|---:|---:|---:|
 | Evanilson | £6.6m | 4.50 | 27.43 | 74.4 |
-| Haaland | £15.8m | 3.90 | 27.41 | 78.3 |
+| Haaland | £15.7m | 3.90 | 27.41 | 78.3 |
 | N.Jackson | £7.3m | 4.60 | 27.23 | 68.7 |
 | Barry | £5.7m | 4.24 | 26.48 | 73.0 |
-| Isak | £9.3m | 4.30 | 26.43 | 68.0 |
+| Isak | £9.4m | 4.30 | 26.43 | 68.0 |
 | McBurnie | £5.5m | 4.71 | 24.51 | 78.1 |
 | Calvert-Lewin | £6.0m | 4.63 | 24.35 | 77.1 |
 | Havertz | £7.4m | 3.31 | 20.15 | 63.8 |
